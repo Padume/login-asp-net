@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    string message = ViewBag.message;
+}
+
+    <div class="jumbotron">
+        <h1>Form Login</h1>
+
+        @using (Html.BeginForm("AuthData", "Login"))
+        {
+
+            <label> Usuario: </label>
+            <input type="text" name="user" value="" />
+
+            <label>Password:</label>
+            <input type="password" name="password" value="" />
+
+            <input type="submit" name="boton_validar" value="Login" />
+        }
+
+        @if (!String.IsNullOrEmpty(message))
+        {
+            <h1> Error Login please check information</h1>
+        }
+
+    </div>
